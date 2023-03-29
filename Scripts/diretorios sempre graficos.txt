@@ -1,0 +1,9 @@
+[DIR_SEMPRE_FaturamentoServiçosGraficos]
+C:\Users\rpa.ad\OneDrive - SADACORP\SEMPRE_Faturamento de Serviços Gráficos\Faturamento de serviços gráficos.xlsx
+"C:\Users\rpa.ad\OneDrive - SADACORP\SEMPRE_Faturamento de Serviços Gráficos\PEDIDOS COMUNS\Faturamento de serviços gráficos.xlsx"
+---
+[DIR_SEMPRE_ServiçosGraficosFATURADOS]
+C:\Users\rpa.ad\OneDrive - SADACORP\SEMPRE_Faturamento de Serviços Gráficos\Faturados
+---
+[DIR_SEMPRE_FaturamentoIURD]
+C:\Users\rpa.ad\OneDrive - SADACORP\SEMPRE_Faturamento de Serviços Gráficos\Pedidos IURD
