@@ -21,7 +21,6 @@ path_json=__location__ + r"\json_cnpj_unicos.json"
 with open(path_json,"r") as file:
     rq_unicos_json_txt = file.read()
 cnpjs_unicos=json.loads(rq_unicos_json_txt) 
-
 url=r"https://www.receitaws.com.br/v1/cnpj/"
 i=0
 
@@ -35,7 +34,6 @@ if not "CNPJ" in lista_cnpjs_destino:
 if not "NOME FANTASIA" in lista_cnpjs_destino:
         lista_cnpjs_destino["NOME FANTASIA"]=""
         print("Coluna NOME FANTASIA criada!!")
-
 if not "NOME" in lista_cnpjs_destino:
         lista_cnpjs_destino["NOME"]=""
         print("Coluna NOME criada!!")
