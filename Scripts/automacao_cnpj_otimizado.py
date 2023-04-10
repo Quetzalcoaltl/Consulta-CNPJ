@@ -1,12 +1,25 @@
+#pyinstaller -F automacao_cnpj_otimizado.py
 import pandas as pd
 import requests as rq
 import time as tm
 import re
 import shutil as st
 import os
-#import openpyxl
 import psutil
 import json
+#criação de estrutura de diretorios de controle de arquivos
+diretorio_atual=os.getcwd()
+diretorio_entrada_dados=diretorio_atual + r"\entrada"
+diretorio_saida_dados=diretorio_atual + r"\saida"
+diretorio_cache=diretorio_atual + r"\cache"
+
+if not os.path.exists(diretorio_entrada_dados):
+    os.mkdir(diretorio_entrada_dados)
+if not os.path.exists(diretorio_saida_dados):
+    os.mkdir(diretorio_saida_dados) 
+if not os.path.exists(diretorio_cache):
+    os.mkdir(diretorio_cache)
+
 
 for proc in psutil.process_iter():
     if proc.name() == "excel.exe":
@@ -83,11 +96,6 @@ for cnpj in lista_cnpjs_destino["CNPJ"]:
 
                 lista_cnpjs_destino.loc[i,["NOME FANTASIA"]]=cnpjs_unicos[cnpj_numeros]["fantasia"]
                 lista_cnpjs_destino.loc[i,["NOME"]]=cnpjs_unicos[cnpj_numeros]["nome"]
-                """if "fantasia" in data: #verifica se existe a chave fantasia no json
-                                lista_cnpjs_destino.loc[i,["NOME FANTASIA"]]=data["fantasia"]
-                        if "nome" in data:
-                                lista_cnpjs_destino.loc[i,["NOME"]]=data["nome"]
-                        if "message" in response.json(): print(f"mensagem da api{0}",data["message"])"""
                 if bool_cnpj_novo_inserido or i%100 == 0:
                         print("Salvando arquivo excel, não cancele o processo...")
                         with pd.ExcelWriter(path_destino, engine='openpyxl') as writer:
